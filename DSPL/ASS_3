@@ -1,0 +1,58 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class student
+{
+public:
+int roll;
+string name,div;
+void accept()
+{
+cout<<"----------------------------------------------------------------------";
+cout<<"\nEnter the name of student:";
+cin>>name;
+cout<<"Enter the division of student:";
+cin>>div;
+cout<<"Enter the roll call of student:";
+cin>>roll;
+}
+
+};
+int main()
+{
+student stud[20];
+int i,j,n,key,flag=0;
+cout<<"\nEnter the count of students who attended the training program:";
+cin>>n;
+for(i=0;i<n;i++)
+{
+stud[i].accept();
+}
+cout<<"\n----------------------------------------------------------------------";
+cout<<"\nYour Student data who attended the training program is:\n";
+for(i=0;i<n;i++)
+{
+cout<<"\nName:"<<stud[i].name<<"\t\tDivision:"<<stud[i].div<<"\t\tRoll No.:"<<stud[i].roll;
+}
+cout<<"\n----------------------------------------------------------------------";
+cout<<"\nEnter the Roll no. do you want search:";
+cin>>key;
+for(i=0;i<n;i++)
+{
+if(key==stud[i].roll)
+{
+    flag=1;
+    break;
+}
+}
+if(flag==1)
+{
+    cout<<"\nThis student of roll call "<<key<<" attended the Training Program";
+}
+else
+{
+    cout<<"\nStudent of roll call "<<key<<" dosen't attend the Training Program";
+}
+cout<<"\n----------------------------------------------------------------------";
+return 0;
+}
